@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poker</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div class="gameContainer">
+    <div class="actions">
+      <input id="playerName" type="text" placeholder="Player name" />
+      <input type="button" id="addPlayer" value="Add Player">
+      <input type="button" id="startGame" value="Start Game" disabled>
+      <input type="button" id="dealCards" value="Deal Cards To Player" disabled>
+      <input type="button" id="dealCardsToTable" value="Deal Cards To Table" disabled>
+      <input type="button" id="dealNextCard" value="Deal Next Card" disabled>
+      <input type="button" id="checkResult" value="Check Result" disabled>
+
+    </div>
+    <hr>
+    <div id="game">
+    </div>
+    <hr>
+    <div id="players">
+    </div>
+    <hr>
+  </div>
+  <script src="./index.ts"></script>
+</body>
+
+</html>
