@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <label for="startingStation">Starting Station</label>
+            <input class="input" type="text" name="startingStation" id="startingStation">
+
+            <label for="endingStation">Ending Station</label>
+            <input class="input" type="text" name="endingStation" id="endingStation">
+
+            <input class="btn" type="button" id="findRoute" value="Find Path">
+        </div>
+        <div class="map">
+            <svg class="img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1970"
+                height="1512" viewBox="0 0 1970 1512">
+                <defs>
+                    <clipPath id="clip-Wiener_Linie">
+                        <rect width="1970" height="1512" />
+                    </clipPath>
+                </defs>
+                <g id="Wiener_Linie" data-name="Wiener Linie" clip-path="url(#clip-Wiener_Linie)">
+                    <rect width="1970" height="1512" fill="#fff" />
+                    <g id="Hütteldorf" transform="translate(19 684.292)">
+                        <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(0 55.708)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#0b8b02" />
+                        <text id="Hütteldorf-2" data-name="Hütteldorf"
+                            transform="matrix(0.695, -0.719, 0.719, 0.695, 13.897, 48.718)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Hütteldorf</tspan>
+                        </text>
+                    </g>
+                    <g id="Ober_St._Veit" data-name="Ober St. Veit" transform="translate(132 671.344)">
+                        <g id="Ellipse_1-2" data-name="Ellipse 1" transform="translate(0 68.656)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-2" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 71.656)" fill="#0b8b02" />
+                        <text id="Ober_St._Veit-2" data-name="Ober St. Veit"
+                            transform="matrix(0.695, -0.719, 0.719, 0.695, 13.897, 61.666)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Ober St. Veit</tspan>
+                        </text>
+                    </g>
+                    <g id="Unter_St._Veit" data-name="Unter St. Veit" transform="translate(245 667.028)">
+                        <g id="Ellipse_1-3" data-name="Ellipse 1" transform="translate(0 72.972)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-3" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 75.972)" fill="#0b8b02" />
+                        <text id="Unter_St._Veit-2" data-name="Unter St. Veit"
+                            transform="matrix(0.695, -0.719, 0.719, 0.695, 13.897, 65.982)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Unter St. Veit</tspan>
+                        </text>
+                    </g>
+                    <g id="Braunschweiggasse" transform="translate(310.11 654.079)">
+                        <g id="Ellipse_1-4" data-name="Ellipse 1" transform="translate(-0.11 85.921)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-4" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(21.89 88.921)" fill="#0b8b02" />
+                        <text id="Braunschweiggasse-2" data-name="Braunschweiggasse"
+                            transform="matrix(0.695, -0.719, 0.719, 0.695, 13.897, 78.93)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Braunschweiggasse</tspan>
+                        </text>
+                    </g>
+                    <g id="Hietzing" transform="translate(407.147 692.924)">
+                        <g id="Ellipse_1-5" data-name="Ellipse 1" transform="translate(-0.147 47.076)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-5" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(21.853 50.076)" fill="#0b8b02" />
+                        <text id="Hietzing-2" data-name="Hietzing"
+                            transform="matrix(0.695, -0.719, 0.719, 0.695, 13.897, 40.086)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Hietzing</tspan>
+                        </text>
+                    </g>
+                    <g id="Schönbrunn" transform="translate(504.184 684.292)">
+                        <g id="Ellipse_1-6" data-name="Ellipse 1" transform="translate(-0.184 55.708)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-6" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(21.816 58.708)" fill="#0b8b02" />
+                        <text id="Schönbrunn-2" data-name="Schönbrunn"
+                            transform="matrix(0.695, -0.719, 0.719, 0.695, 13.897, 48.718)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Schönbrunn</tspan>
+                        </text>
+                    </g>
+                    <g id="Meidling_Hauptstraße" data-name="Meidling Hauptstraße"
+                        transform="translate(601.221 679.976)">
+                        <g id="Ellipse_1-7" data-name="Ellipse 1" transform="translate(-0.221 60.024)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-7" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(21.779 63.024)" fill="#0b8b02" />
+                        <text id="Meidling_Hauptstraße-2" data-name="Meidling
+              Hauptstraße" transform="matrix(0.695, -0.719, 0.719, 0.695, 13.897, 53.034)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Meidling</tspan>
+                            <tspan x="0" y="12">Hauptstraße</tspan>
+                        </text>
+                    </g>
+                    <g id="Längefeldgasse" transform="translate(698.257 667.028)">
+                        <g id="Ellipse_1-8" data-name="Ellipse 1" transform="translate(-0.257 72.972)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-8" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(21.743 75.972)" fill="#0b8b02" />
+                        <text id="Längefeldgasse-2" data-name="Längefeldgasse"
+                            transform="matrix(0.695, -0.719, 0.719, 0.695, 27.897, 64.982)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Längefeldgasse</tspan>
+                        </text>
+                    </g>
+                    <g id="Margaretengürtel" transform="translate(795.294 658.396)">
+                        <g id="Ellipse_1-9" data-name="Ellipse 1" transform="translate(-0.294 81.604)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-9" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(21.706 84.604)" fill="#0b8b02" />
+                        <text id="Margaretengürtel-2" data-name="Margaretengürtel"
+                            transform="matrix(0.695, -0.719, 0.719, 0.695, 13.897, 74.614)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Margaretengürtel</tspan>
+                        </text>
+                    </g>
+                    <g id="Pilgramgasse" transform="translate(892.331 675.66)">
+                        <g id="Ellipse_1-10" data-name="Ellipse 1" transform="translate(-0.331 64.34)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-10" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(21.669 67.34)" fill="#0b8b02" />
+                        <text id="Pilgramgasse-2" data-name="Pilgramgasse"
+                            transform="matrix(0.695, -0.719, 0.719, 0.695, 13.897, 57.35)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Pilgramgasse</tspan>
+                        </text>
+                    </g>
+                    <g id="Kettenbrückengasse" transform="translate(989.368 649.763)">
+                        <g id="Ellipse_1-11" data-name="Ellipse 1" transform="translate(-0.368 90.237)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-11" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(21.632 93.237)" fill="#0b8b02" />
+                        <text id="Kettenbrückengasse-2" data-name="Kettenbrückengasse"
+                            transform="matrix(0.695, -0.719, 0.719, 0.695, 13.897, 83.246)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Kettenbrückengasse</tspan>
+                        </text>
+                    </g>
+                    <g id="Karlsplatz" transform="translate(1063.001 684.292)">
+                        <g id="Ellipse_1-12" data-name="Ellipse 1" transform="translate(-0.001 55.708)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-12" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(21.999 58.708)" fill="#0b8b02" />
+                        <text id="Karlsplatz-2" data-name="Karlsplatz"
+                            transform="matrix(0.695, -0.719, 0.719, 0.695, 30.897, 58.718)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Karlsplatz</tspan>
+                        </text>
+                    </g>
+                    <g id="Stadtpark" transform="translate(1126.861 712.884) rotate(-51)">
+                        <g id="Ellipse_1-13" data-name="Ellipse 1" transform="translate(0 56.85)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-13" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 59.85)" fill="#0b8b02" />
+                        <text id="Stadtpark-2" data-name="Stadtpark" transform="translate(45.42 15.87) rotate(50)"
+                            fill="#707070" font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Stadtpark</tspan>
+                        </text>
+                    </g>
+                    <g id="Landstraße" transform="translate(1196.861 624.884) rotate(-51)">
+                        <g id="Ellipse_1-14" data-name="Ellipse 1" transform="translate(0 56.85)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-14" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 59.85)" fill="#0b8b02" />
+                        <text id="Landstraße-2" data-name="Landstraße" transform="translate(35.105 93.707) rotate(50)"
+                            fill="#707070" font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Landstraße</tspan>
+                        </text>
+                    </g>
+                    <g id="Schwedenplatz" transform="translate(1270.162 631.467) rotate(-130)">
+                        <g id="Ellipse_1-15" data-name="Ellipse 1" transform="translate(0 70.042)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-15" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 73.042)" fill="#0b8b02" />
+                        <text id="Schwedenplatz-2" data-name="Schwedenplatz"
+                            transform="translate(113.133 7.52) rotate(131)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Schwedenplatz</tspan>
+                        </text>
+                    </g>
+                    <g id="Schottenring" transform="translate(1198.162 544.467) rotate(-130)">
+                        <g id="Ellipse_1-16" data-name="Ellipse 1" transform="translate(0 70.042)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-16" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 73.042)" fill="#0b8b02" />
+                        <text id="Schottenring-2" data-name="Schottenring"
+                            transform="translate(110.685 11.993) rotate(131)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Schottenring</tspan>
+                        </text>
+                    </g>
+                    <g id="Roßauer_Lande" data-name="Roßauer Lande"
+                        transform="translate(1126.028 458.579) rotate(-130)">
+                        <g id="Ellipse_1-17" data-name="Ellipse 1" transform="translate(0 70.216)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-17" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 73.216)" fill="#0b8b02" />
+                        <text id="Roßauer_Lande-2" data-name="Roßauer Lande"
+                            transform="translate(94.95 1.312) rotate(131)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Roßauer Lande</tspan>
+                        </text>
+                    </g>
+                    <g id="Friedensbrucke" transform="translate(1052.162 373.467) rotate(-130)">
+                        <g id="Ellipse_1-18" data-name="Ellipse 1" transform="translate(0 70.042)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-18" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 73.042)" fill="#0b8b02" />
+                        <text id="Friedensbrucke-2" data-name="Friedensbrucke"
+                            transform="translate(94.844 1.312) rotate(131)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Friedensbrucke</tspan>
+                        </text>
+                    </g>
+                    <g id="Spitelau" transform="translate(981.419 286.386) rotate(-130)">
+                        <g id="Ellipse_1-19" data-name="Ellipse 1" transform="translate(0 68.36)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-19" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 71.36)" fill="#0b8b02" />
+                        <text id="Spitelau-2" data-name="Spitelau" transform="translate(99.96 1.312) rotate(131)"
+                            fill="#707070" font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Spitelau</tspan>
+                        </text>
+                    </g>
+                    <g id="Heiligenstadt" transform="translate(877.233 149.104) rotate(-90)">
+                        <g id="Ellipse_1-20" data-name="Ellipse 1" transform="translate(0 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-20" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 83.732)" fill="#0b8b02" />
+                        <text id="Heiligenstadt-2" data-name="Heiligenstadt"
+                            transform="matrix(-0.017, 1, -1, -0.017, 62.782, 0.035)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Heiligenstadt</tspan>
+                        </text>
+                    </g>
+                    <g id="Niederhofstraße" transform="translate(617.386 873.363) rotate(-90)">
+                        <g id="Ellipse_1-21" data-name="Ellipse 1" transform="translate(20 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-21" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Niederhofstraße-2" data-name="Niederhofstraße"
+                            transform="matrix(-0.017, 1, -1, -0.017, 69.782, -14.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Niederhofstraße</tspan>
+                        </text>
+                    </g>
+                    <g id="Bahnhof_Meidling" data-name="Bahnhof Meidling"
+                        transform="translate(617.386 966.363) rotate(-90)">
+                        <g id="Ellipse_1-22" data-name="Ellipse 1" transform="translate(20 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-22" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Bahnhof_Meidling-2" data-name="Bahnhof Meidling"
+                            transform="matrix(-0.017, 1, -1, -0.017, 69.782, -19.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Bahnhof Meidling</tspan>
+                        </text>
+                    </g>
+                    <g id="Tscheterttgasse" transform="translate(617.386 1059.363) rotate(-90)">
+                        <g id="Ellipse_1-23" data-name="Ellipse 1" transform="translate(20 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-23" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Tscheterttgasse-2" data-name="Tscheterttgasse"
+                            transform="matrix(-0.017, 1, -1, -0.017, 64.782, -19.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Tscheterttgasse</tspan>
+                        </text>
+                    </g>
+                    <g id="Am_Schöpfwerk" data-name="Am Schöpfwerk" transform="translate(617.386 1152.363) rotate(-90)">
+                        <g id="Ellipse_1-24" data-name="Ellipse 1" transform="translate(20 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-24" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Am_Schöpfwerk-2" data-name="Am Schöpfwerk"
+                            transform="matrix(-0.017, 1, -1, -0.017, 64.782, -18.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Am Schöpfwerk</tspan>
+                        </text>
+                    </g>
+                    <g id="Alterla" transform="translate(617.386 1245.363) rotate(-90)">
+                        <g id="Ellipse_1-25" data-name="Ellipse 1" transform="translate(20 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-25" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Alterla-2" data-name="Alterla"
+                            transform="matrix(-0.017, 1, -1, -0.017, 64.782, -18.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Alterla</tspan>
+                        </text>
+                    </g>
+                    <g id="Erlaaer" transform="translate(617.386 1338.363) rotate(-90)">
+                        <g id="Ellipse_1-26" data-name="Ellipse 1" transform="translate(20 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-26" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Erlaaer-2" data-name="Erlaaer"
+                            transform="matrix(-0.017, 1, -1, -0.017, 64.782, -19.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Erlaaer</tspan>
+                        </text>
+                    </g>
+                    <g id="Perfektastraße" transform="translate(617.386 1431.363) rotate(-90)">
+                        <g id="Ellipse_1-27" data-name="Ellipse 1" transform="translate(20 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-27" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Perfektastraße-2" data-name="Perfektastraße"
+                            transform="matrix(-0.017, 1, -1, -0.017, 65.782, -24.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Perfektastraße</tspan>
+                        </text>
+                    </g>
+                    <g id="Siebenhirten" transform="translate(617.386 1524.363) rotate(-90)">
+                        <g id="Ellipse_1-28" data-name="Ellipse 1" transform="translate(20 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-28" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Siebenhirten-2" data-name="Siebenhirten"
+                            transform="matrix(-0.017, 1, -1, -0.017, 64.782, -24.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Siebenhirten</tspan>
+                        </text>
+                    </g>
+                    <g id="Nußdorfer_Straße" data-name="Nußdorfer Straße"
+                        transform="translate(999.753 229.729) rotate(180)">
+                        <g id="Ellipse_1-29" data-name="Ellipse 1" transform="translate(113 79.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-29" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Nußdorfer_Straße-2" data-name="Nußdorfer Straße"
+                            transform="matrix(-0.017, 1, -1, -0.017, 121.782, -24.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Nußdorfer Straße</tspan>
+                        </text>
+                    </g>
+                    <g id="Wahringer_Straße" data-name="Wahringer Straße"
+                        transform="translate(863.305 217.569) rotate(160)">
+                        <g id="Ellipse_1-30" data-name="Ellipse 1" transform="translate(122.813 63.683)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-30" data-name="Rectangle 1" width="149" height="19" rx="9.5"
+                            transform="translate(-26.759 65.788) rotate(-1)" fill="#ac560b" />
+                        <text id="Wahringer_Straße-2" data-name="Wahringer Straße"
+                            transform="matrix(-0.946, -0.326, 0.326, -0.946, 151.808, 125.487)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Wahringer Straße</tspan>
+                        </text>
+                    </g>
+                    <g id="Gumpedorfer_Straße" data-name="Gumpedorfer Straße"
+                        transform="translate(620.386 780.363) rotate(-90)">
+                        <rect id="Rectangle_1-31" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(40 81.732)" fill="#ac560b" />
+                        <text id="Gumpedorfer_Straße-2" data-name="Gumpedorfer Straße"
+                            transform="matrix(-0.017, 1, -1, -0.017, 95.782, -32.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Gumpedorfer Straße</tspan>
+                        </text>
+                    </g>
+                    <g id="Westbahnhof" transform="translate(618.386 689.363) rotate(-90)">
+                        <g id="Ellipse_1-31" data-name="Ellipse 1" transform="translate(20 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-32" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Westbahnhof-2" data-name="Westbahnhof"
+                            transform="matrix(-0.017, 1, -1, -0.017, 69.782, -14.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Westbahnhof</tspan>
+                        </text>
+                    </g>
+                    <g id="Burggasse" transform="translate(618.386 596.363) rotate(-90)">
+                        <g id="Ellipse_1-32" data-name="Ellipse 1" transform="translate(20 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-33" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Burggasse-2" data-name="Burggasse"
+                            transform="matrix(-0.017, 1, -1, -0.017, 74.782, 110.035)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Burggasse</tspan>
+                        </text>
+                    </g>
+                    <g id="Thaliastraße" transform="translate(617.386 503.363) rotate(-90)">
+                        <g id="Ellipse_1-33" data-name="Ellipse 1" transform="translate(20 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-34" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Thaliastraße-2" data-name="Thaliastraße"
+                            transform="matrix(-0.017, 1, -1, -0.017, 69.782, -14.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Thaliastraße</tspan>
+                        </text>
+                    </g>
+                    <g id="Alserstraße" transform="translate(617.386 410.363) rotate(-90)">
+                        <g id="Ellipse_1-34" data-name="Ellipse 1" transform="translate(20 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-35" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Alserstraße-2" data-name="Alserstraße"
+                            transform="matrix(-0.017, 1, -1, -0.017, 69.782, -14.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Alserstraße</tspan>
+                        </text>
+                    </g>
+                    <g id="AKH" transform="translate(617.386 317.363) rotate(-90)">
+                        <g id="Ellipse_1-35" data-name="Ellipse 1" transform="translate(20 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-36" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="AKH-2" data-name="AKH" transform="matrix(-0.017, 1, -1, -0.017, 69.782, -14.965)"
+                            fill="#707070" font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">AKH</tspan>
+                        </text>
+                    </g>
+                    <g id="Jagerstraße" transform="translate(1092.753 228.729) rotate(180)">
+                        <g id="Ellipse_1-36" data-name="Ellipse 1" transform="translate(20 79.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-37" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Jagerstraße-2" data-name="Jagerstraße"
+                            transform="matrix(-0.017, 1, -1, -0.017, 28.782, 111.035)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Jagerstraße</tspan>
+                        </text>
+                    </g>
+                    <g id="Dresden_Straße" data-name="Dresden Straße"
+                        transform="translate(1185.753 226.729) rotate(180)">
+                        <g id="Ellipse_1-37" data-name="Ellipse 1" transform="translate(20 79.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-38" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Dresden_Straße-2" data-name="Dresden Straße"
+                            transform="matrix(-0.017, 1, -1, -0.017, 28.782, 111.035)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Dresden Straße</tspan>
+                        </text>
+                    </g>
+                    <g id="Handelskai" transform="translate(1278.753 226.729) rotate(180)">
+                        <g id="Ellipse_1-38" data-name="Ellipse 1" transform="translate(20 79.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-39" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Handelskai-2" data-name="Handelskai"
+                            transform="matrix(-0.017, 1, -1, -0.017, 28.782, 111.035)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Handelskai</tspan>
+                        </text>
+                    </g>
+                    <g id="Neu_Donau" data-name="Neu Donau" transform="translate(1371.753 225.729) rotate(180)">
+                        <g id="Ellipse_1-39" data-name="Ellipse 1" transform="translate(20 79.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-40" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Neu_Donau-2" data-name="Neu Donau"
+                            transform="matrix(-0.017, 1, -1, -0.017, 28.782, 111.035)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Neu Donau</tspan>
+                        </text>
+                        <text id="Neu_Donau-3" data-name="Neu Donau"
+                            transform="matrix(-0.017, 1, -1, -0.017, 28.782, 111.035)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Neu Donau</tspan>
+                        </text>
+                    </g>
+                    <g id="Florisdorf" transform="translate(1464.753 225.729) rotate(180)">
+                        <g id="Ellipse_1-40" data-name="Ellipse 1" transform="translate(20 79.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-41" data-name="Rectangle 1" width="71" height="15" rx="7.5"
+                            transform="translate(42 83.732)" fill="#ac560b" />
+                        <text id="Florisdorf-2" data-name="Florisdorf"
+                            transform="matrix(-0.017, 1, -1, -0.017, 28.782, 111.035)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Florisdorf</tspan>
+                        </text>
+                    </g>
+                    <g id="Schweglerstraße" transform="matrix(0.883, 0.469, -0.469, 0.883, 629.854, 454.315)">
+                        <g id="Ellipse_1-41" data-name="Ellipse 1" transform="translate(0 55.708)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-42" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Schweglerstraße-2" data-name="Schweglerstraße"
+                            transform="translate(10.839 174.669) rotate(-90)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Schweglerstraße</tspan>
+                        </text>
+                    </g>
+                    <g id="Johnstraße" transform="matrix(0.883, 0.469, -0.469, 0.883, 528.854, 401.315)">
+                        <g id="Ellipse_1-42" data-name="Ellipse 1" transform="translate(0 55.708)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-43" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Johnstraße-2" data-name="Johnstraße" transform="translate(10.167 147.845) rotate(-90)"
+                            fill="#707070" font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Johnstraße</tspan>
+                        </text>
+                    </g>
+                    <g id="Hütteldorfer_Straße" data-name="Hütteldorfer Straße"
+                        transform="matrix(0.883, 0.469, -0.469, 0.883, 427.854, 346.315)">
+                        <g id="Ellipse_1-43" data-name="Ellipse 1" transform="translate(0 55.708)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-44" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Hütteldorfer_Straße-2" data-name="Hütteldorfer Straße"
+                            transform="translate(9.745 202.433) rotate(-90)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Hütteldorfer Straße</tspan>
+                        </text>
+                    </g>
+                    <g id="Kendelstraße" transform="matrix(0.883, 0.469, -0.469, 0.883, 325.854, 294.315)">
+                        <g id="Ellipse_1-44" data-name="Ellipse 1" transform="translate(0 55.708)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-45" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Kendelstraße-2" data-name="Kendelstraße"
+                            transform="translate(7.083 167.606) rotate(-90)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Kendelstraße</tspan>
+                        </text>
+                    </g>
+                    <g id="Ottakring" transform="matrix(0.883, 0.469, -0.469, 0.883, 227.854, 238.315)">
+                        <g id="Ellipse_1-45" data-name="Ellipse 1" transform="translate(0 55.708)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-46" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Ottakring-2" data-name="Ottakring" transform="translate(9.586 142.491) rotate(-90)"
+                            fill="#707070" font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Ottakring</tspan>
+                        </text>
+                    </g>
+                    <g id="Zieglergasse" transform="translate(700.182 498.388) rotate(1)">
+                        <g id="Ellipse_1-46" data-name="Ellipse 1" transform="translate(93.986 54.068)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-47" data-name="Rectangle 1" width="72" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Zieglergasse-2" data-name="Zieglergasse"
+                            transform="translate(106.678 49.978) rotate(-90)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Zieglergasse</tspan>
+                        </text>
+                    </g>
+                    <g id="Neubaugasse" transform="translate(814.182 500.388) rotate(1)">
+                        <g id="Ellipse_1-47" data-name="Ellipse 1" transform="translate(73.954 52.417)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-48" data-name="Rectangle 1" width="72" height="15" rx="7.5"
+                            transform="translate(1.968 57.058)" fill="#ffa41c" />
+                        <text id="Neubaugasse-2" data-name="Neubaugasse"
+                            transform="translate(86.663 49.327) rotate(-90)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Neubaugasse</tspan>
+                        </text>
+                    </g>
+                    <g id="Volkstheater" transform="translate(931.182 505.388) rotate(1)">
+                        <g id="Ellipse_1-48" data-name="Ellipse 1" transform="translate(41.906 49.976)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-49" data-name="Rectangle 1" width="60" height="15" rx="7.5"
+                            transform="translate(-19.081 54.425)" fill="#ffa41c" />
+                        <text id="Volkstheater-2" data-name="Volkstheater"
+                            transform="translate(33.671 50.252) rotate(-90)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Volkstheater</tspan>
+                        </text>
+                    </g>
+                    <g id="Herrengasse" transform="translate(973.182 500.388) rotate(1)">
+                        <g id="Ellipse_1-49" data-name="Ellipse 1" transform="translate(97.985 53.998)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-50" data-name="Rectangle 1" width="76" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Herrengasse-2" data-name="Herrengasse"
+                            transform="translate(110.694 50.908) rotate(-90)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Herrengasse</tspan>
+                        </text>
+                    </g>
+                    <g id="Stephansplatz" transform="translate(1070.182 500.388) rotate(1)">
+                        <g id="Ellipse_1-50" data-name="Ellipse 1" transform="translate(97.985 53.998)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-51" data-name="Rectangle 1" width="76" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Stephansplatz-2" data-name="Stephansplatz"
+                            transform="translate(88.802 57.291) rotate(-90)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Stephansplatz</tspan>
+                        </text>
+                    </g>
+                    <g id="Stubentor" transform="matrix(0.695, 0.719, -0.719, 0.695, 1220.011, 515.022)">
+                        <rect id="Rectangle_1-52" data-name="Rectangle 1" width="96" height="15" rx="7.5"
+                            transform="translate(21.092 59.138) rotate(3)" fill="#ffa41c" />
+                        <text id="Stubentor-2" data-name="Stubentor" transform="translate(52.414 155.886) rotate(-90)"
+                            fill="#707070" font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Stubentor</tspan>
+                        </text>
+                    </g>
+                    <g id="Rochusgasse" transform="translate(1288.438 601.371) rotate(38)">
+                        <g id="Ellipse_1-51" data-name="Ellipse 1" transform="translate(97.985 53.998)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-53" data-name="Rectangle 1" width="76" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Rochusgasse-2" data-name="Rochusgasse"
+                            transform="translate(110.694 50.908) rotate(-90)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Rochusgasse</tspan>
+                        </text>
+                    </g>
+                    <g id="Kardinal-Nagl-Platz" transform="translate(1365.438 664.371) rotate(38)">
+                        <g id="Ellipse_1-52" data-name="Ellipse 1" transform="translate(97.985 53.998)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-54" data-name="Rectangle 1" width="76" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Kardinal-Nagl-Platz-2" data-name="Kardinal-Nagl-Platz"
+                            transform="translate(110.694 50.908) rotate(-90)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Kardinal-Nagl-Platz</tspan>
+                        </text>
+                    </g>
+                    <g id="Schlachthausgasse" transform="translate(1443.438 724.371) rotate(38)">
+                        <g id="Ellipse_1-53" data-name="Ellipse 1" transform="translate(97.985 53.998)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-55" data-name="Rectangle 1" width="76" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Schlachthausgasse-2" data-name="Schlachthausgasse"
+                            transform="translate(110.694 50.908) rotate(-90)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Schlachthausgasse</tspan>
+                        </text>
+                    </g>
+                    <g id="Erdberg" transform="translate(1524.438 785.371) rotate(38)">
+                        <g id="Ellipse_1-54" data-name="Ellipse 1" transform="translate(97.985 53.998)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-56" data-name="Rectangle 1" width="76" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Erdberg-2" data-name="Erdberg" transform="translate(110.694 50.908) rotate(-90)"
+                            fill="#707070" font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Erdberg</tspan>
+                        </text>
+                    </g>
+                    <g id="Gasometer" transform="translate(1605.438 845.371) rotate(38)">
+                        <g id="Ellipse_1-55" data-name="Ellipse 1" transform="translate(97.985 53.998)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-57" data-name="Rectangle 1" width="76" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Gasometer-2" data-name="Gasometer" transform="translate(110.694 50.908) rotate(-90)"
+                            fill="#707070" font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Gasometer</tspan>
+                        </text>
+                    </g>
+                    <g id="Zipperstraße" transform="translate(1685.438 902.371) rotate(38)">
+                        <g id="Ellipse_1-56" data-name="Ellipse 1" transform="translate(97.985 53.998)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-58" data-name="Rectangle 1" width="76" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Zipperstraße-2" data-name="Zipperstraße"
+                            transform="translate(110.694 50.908) rotate(-90)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Zipperstraße</tspan>
+                        </text>
+                    </g>
+                    <g id="Enkplatz" transform="translate(1763.438 961.371) rotate(38)">
+                        <g id="Ellipse_1-57" data-name="Ellipse 1" transform="translate(97.985 53.998)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-59" data-name="Rectangle 1" width="76" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Enkplatz-2" data-name="Enkplatz" transform="translate(110.694 50.908) rotate(-90)"
+                            fill="#707070" font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Enkplatz</tspan>
+                        </text>
+                    </g>
+                    <g id="Simmering" transform="translate(1843.438 1020.371) rotate(38)">
+                        <g id="Ellipse_1-58" data-name="Ellipse 1" transform="translate(97.985 53.998)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-60" data-name="Rectangle 1" width="76" height="15" rx="7.5"
+                            transform="translate(22 58.708)" fill="#ffa41c" />
+                        <text id="Simmering-2" data-name="Simmering" transform="translate(110.694 50.908) rotate(-90)"
+                            fill="#707070" font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Simmering</tspan>
+                        </text>
+                    </g>
+                    <g id="Museum-quartier" transform="translate(1142.23 830.311) rotate(-132)">
+                        <g id="Ellipse_1-59" data-name="Ellipse 1" transform="translate(178.341 68.7)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <path id="Path_1" data-name="Path 1"
+                            d="M14.373,0H121.694c7.938,0,14.373,3.358,14.373,7.5S129.632,15,121.694,15H14.373C6.435,15,0,11.642,0,7.5S6.435,0,14.373,0Z"
+                            transform="matrix(0.996, -0.087, 0.087, 0.996, 42.2, 87.535)" fill="#aa1fd2" />
+                        <text id="Museum-quartier-2" data-name="Museum-quartier"
+                            transform="translate(254.019 -4.239) rotate(132)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Museum-quartier</tspan>
+                        </text>
+                    </g>
+                    <g id="Volkstheater-3" data-name="Volkstheater"
+                        transform="translate(1040.229 790.311) rotate(-132)">
+                        <path id="Path_1-2" data-name="Path 1"
+                            d="M9.53,0H80.685c5.263,0,9.53,3.358,9.53,7.5S85.949,15,80.685,15H9.53C4.267,15,0,11.642,0,7.5S4.267,0,9.53,0Z"
+                            transform="matrix(0.966, -0.259, 0.259, 0.966, 102.295, 121.913)" fill="#aa1fd2" />
+                    </g>
+                    <g id="Rathhaus" transform="translate(892.386 597.363) rotate(-90)">
+                        <g id="Ellipse_1-60" data-name="Ellipse 1" transform="translate(128.888 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <path id="Path_2" data-name="Path 2"
+                            d="M9.178,0H77.71c5.069,0,9.178,3.358,9.178,7.5S82.779,15,77.71,15H9.178C4.109,15,0,11.642,0,7.5S4.109,0,9.178,0Z"
+                            transform="translate(42 83.732)" fill="#aa1fd2" />
+                        <text id="Rathhaus-2" data-name="Rathhaus"
+                            transform="matrix(-0.017, 1, -1, -0.017, 113.671, 107.035)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Rathhaus</tspan>
+                        </text>
+                    </g>
+                    <g id="Schottentor-Uni" transform="translate(955.259 364.966)">
+                        <g id="Ellipse_1-61" data-name="Ellipse 1" transform="translate(128.888 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <path id="Path_2-2" data-name="Path 2"
+                            d="M9.178,0H77.71c5.069,0,9.178,3.358,9.178,7.5S82.779,15,77.71,15H9.178C4.109,15,0,11.642,0,7.5S4.109,0,9.178,0Z"
+                            transform="translate(42 83.732)" fill="#aa1fd2" />
+                        <text id="Schottentor-Uni-2" data-name="Schottentor-Uni"
+                            transform="matrix(-0.017, 1, -1, -0.017, 72.671, -13.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Schottentor-Uni</tspan>
+                        </text>
+                    </g>
+                    <g id="Schottenring-3" data-name="Schottenring">
+                        <path id="Path_3" data-name="Path 3"
+                            d="M14.332,0H121.346c7.915,0,14.332,3.358,14.332,7.5S129.261,15,121.346,15H14.332C6.417,15,0,11.642,0,7.5S6.417,0,14.332,0Z"
+                            transform="matrix(0.978, 0.208, -0.208, 0.978, 1109.767, 451.829)" fill="#aa1fd2" />
+                    </g>
+                    <g id="Taborstraße" transform="translate(1222.259 391.966)">
+                        <g id="Ellipse_1-62" data-name="Ellipse 1" transform="translate(128.888 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <path id="Path_2-3" data-name="Path 2"
+                            d="M9.178,0H77.71c5.069,0,9.178,3.358,9.178,7.5S82.779,15,77.71,15H9.178C4.109,15,0,11.642,0,7.5S4.109,0,9.178,0Z"
+                            transform="translate(42 83.732)" fill="#aa1fd2" />
+                        <text id="Taborstraße-2" data-name="Taborstraße"
+                            transform="matrix(-0.017, 1, -1, -0.017, 72.671, -13.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Taborstraße</tspan>
+                        </text>
+                    </g>
+                    <g id="Praterstern" transform="translate(1331.259 391.966)">
+                        <g id="Ellipse_1-63" data-name="Ellipse 1" transform="translate(128.888 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <path id="Path_2-4" data-name="Path 2"
+                            d="M9.178,0H77.71c5.069,0,9.178,3.358,9.178,7.5S82.779,15,77.71,15H9.178C4.109,15,0,11.642,0,7.5S4.109,0,9.178,0Z"
+                            transform="translate(42 83.732)" fill="#aa1fd2" />
+                        <text id="Praterstern-2" data-name="Praterstern"
+                            transform="matrix(-0.017, 1, -1, -0.017, 72.671, -13.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Praterstern</tspan>
+                        </text>
+                    </g>
+                    <g id="Messe-Prater" transform="translate(1440.259 391.966)">
+                        <g id="Ellipse_1-64" data-name="Ellipse 1" transform="translate(128.888 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <path id="Path_2-5" data-name="Path 2"
+                            d="M9.178,0H77.71c5.069,0,9.178,3.358,9.178,7.5S82.779,15,77.71,15H9.178C4.109,15,0,11.642,0,7.5S4.109,0,9.178,0Z"
+                            transform="translate(42 83.732)" fill="#aa1fd2" />
+                        <text id="Messe-Prater-2" data-name="Messe-Prater"
+                            transform="matrix(-0.017, 1, -1, -0.017, 112.671, 1.035)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Messe-Prater</tspan>
+                        </text>
+                    </g>
+                    <g id="Krieau" transform="translate(1551.259 391.966)">
+                        <g id="Ellipse_1-65" data-name="Ellipse 1" transform="translate(128.888 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <path id="Path_2-6" data-name="Path 2"
+                            d="M9.178,0H77.71c5.069,0,9.178,3.358,9.178,7.5S82.779,15,77.71,15H9.178C4.109,15,0,11.642,0,7.5S4.109,0,9.178,0Z"
+                            transform="translate(42 83.732)" fill="#aa1fd2" />
+                        <text id="Krieau-2" data-name="Krieau"
+                            transform="matrix(-0.017, 1, -1, -0.017, 72.671, -13.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Krieau</tspan>
+                        </text>
+                    </g>
+                    <g id="Stadion" transform="translate(1662.259 391.966)">
+                        <g id="Ellipse_1-66" data-name="Ellipse 1" transform="translate(128.888 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <path id="Path_2-7" data-name="Path 2"
+                            d="M9.178,0H77.71c5.069,0,9.178,3.358,9.178,7.5S82.779,15,77.71,15H9.178C4.109,15,0,11.642,0,7.5S4.109,0,9.178,0Z"
+                            transform="translate(42 83.732)" fill="#aa1fd2" />
+                        <text id="Stadion-2" data-name="Stadion"
+                            transform="matrix(-0.017, 1, -1, -0.017, 72.671, -13.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Stadion</tspan>
+                        </text>
+                    </g>
+                    <g id="Donaumarina" transform="translate(1771.259 391.966)">
+                        <g id="Ellipse_1-67" data-name="Ellipse 1" transform="translate(128.888 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <path id="Path_2-8" data-name="Path 2"
+                            d="M9.178,0H77.71c5.069,0,9.178,3.358,9.178,7.5S82.779,15,77.71,15H9.178C4.109,15,0,11.642,0,7.5S4.109,0,9.178,0Z"
+                            transform="translate(42 83.732)" fill="#aa1fd2" />
+                        <text id="Donaumarina-2" data-name="Donaumarina"
+                            transform="matrix(-0.017, 1, -1, -0.017, 72.671, -13.965)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Donaumarina</tspan>
+                        </text>
+                    </g>
+                    <g id="Nestroyplatz" transform="translate(1296.259 480.966)">
+                        <g id="Ellipse_1-68" data-name="Ellipse 1" transform="translate(131.888 80.732)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <path id="Path_2-9" data-name="Path 2"
+                            d="M9.178,0H77.71c5.069,0,9.178,3.358,9.178,7.5S82.779,15,77.71,15H9.178C4.109,15,0,11.642,0,7.5S4.109,0,9.178,0Z"
+                            transform="translate(42 83.732)" fill="red" />
+                        <text id="Nestroyplatz-2" data-name="Nestroyplatz"
+                            transform="matrix(-0.017, 1, -1, -0.017, 137.671, 103.035)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Nestroyplatz</tspan>
+                        </text>
+                    </g>
+                    <g id="Stephansplatz-3" data-name="Stephansplatz" transform="translate(1296.259 480.966)">
+                        <path id="Path_6" data-name="Path 6"
+                            d="M11.7,0H99.073c6.463,0,11.7,3.358,11.7,7.5s-5.239,7.5-11.7,7.5H11.7C5.239,15,0,11.642,0,7.5S5.239,0,11.7,0Z"
+                            transform="translate(-98 80.732)" fill="red" />
+                    </g>
+                    <g id="Praterstern-3" data-name="Praterstern" transform="translate(1599.594 503.096) rotate(123)">
+                        <path id="Path_4" data-name="Path 4"
+                            d="M7.292,0H61.739a7.4,7.4,0,0,1,7.292,7.5A7.4,7.4,0,0,1,61.739,15H7.292A7.4,7.4,0,0,1,0,7.5,7.4,7.4,0,0,1,7.292,0Z"
+                            transform="translate(62.49 104.504) rotate(-14)" fill="red" />
+                    </g>
+                    <g id="Vorgartenstraße" transform="matrix(0.438, -0.899, 0.899, 0.438, 1404.851, 461.417)">
+                        <g id="Ellipse_1-69" data-name="Ellipse 1" transform="translate(113.7 57.424)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-61" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 59.85)" fill="red" />
+                        <text id="Vorgartenstraße-2" data-name="Vorgartenstraße"
+                            transform="matrix(0.438, 0.899, -0.899, 0.438, 79.795, -26.708)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Vorgartenstraße</tspan>
+                        </text>
+                    </g>
+                    <g id="Donauinsel" transform="matrix(0.438, -0.899, 0.899, 0.438, 1456.851, 358.417)">
+                        <g id="Ellipse_1-70" data-name="Ellipse 1" transform="translate(113.7 57.424)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-62" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 59.85)" fill="red" />
+                        <text id="Donauinsel-2" data-name="Donauinsel"
+                            transform="matrix(0.438, 0.899, -0.899, 0.438, 79.795, -26.708)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Donauinsel</tspan>
+                        </text>
+                    </g>
+                    <g id="Kaisermühlen_-_VIC" data-name="Kaisermühlen - VIC"
+                        transform="matrix(0.438, -0.899, 0.899, 0.438, 1509.852, 256.417)">
+                        <g id="Ellipse_1-71" data-name="Ellipse 1" transform="translate(113.7 57.424)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-63" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 59.85)" fill="red" />
+                        <text id="Kaisermühlen_-_VIC-2" data-name="Kaisermühlen - VIC"
+                            transform="matrix(0.438, 0.899, -0.899, 0.438, 72.804, -43.324)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Kaisermühlen - VIC</tspan>
+                        </text>
+                    </g>
+                    <g id="Altedonau" transform="matrix(0.438, -0.899, 0.899, 0.438, 1561.852, 153.417)">
+                        <g id="Ellipse_1-72" data-name="Ellipse 1" transform="translate(113.7 57.424)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-64" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 59.85)" fill="red" />
+                        <text id="Altedonau-2" data-name="Altedonau"
+                            transform="matrix(0.438, 0.899, -0.899, 0.438, 87.27, -13.664)" fill="#707070"
+                            font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Altedonau</tspan>
+                        </text>
+                    </g>
+                    <g id="Karlsplatz-3" data-name="Karlsplatz">
+                        <g id="Stephansplatz-4" data-name="Stephansplatz"
+                            transform="matrix(0.53, -0.848, 0.848, 0.53, -38.35, 1449.682)">
+                            <path id="Path_5" data-name="Path 5"
+                                d="M19.886,0H168.371c10.983,0,19.886,3.358,19.886,7.5s-8.9,7.5-19.886,7.5H19.886C8.9,15,0,11.642,0,7.5S8.9,0,19.886,0Z"
+                                transform="translate(1191.259 560.698)" fill="red" />
+                        </g>
+                    </g>
+                    <g id="Taubstummengasse" transform="translate(1004.963 875.443) rotate(-90)">
+                        <g id="Ellipse_1-73" data-name="Ellipse 1" transform="translate(0.104 57.198)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-65" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 59.85)" fill="red" />
+                        <text id="Taubstummengasse-2" data-name="Taubstummengasse"
+                            transform="translate(8.024 -39.865) rotate(90)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Taubstummengasse</tspan>
+                        </text>
+                    </g>
+                    <g id="Südtiroler_Platz" data-name="Südtiroler Platz"
+                        transform="translate(1005.963 988.443) rotate(-90)">
+                        <g id="Ellipse_1-74" data-name="Ellipse 1" transform="translate(0.104 57.198)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-66" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 59.85)" fill="red" />
+                        <text id="Südtiroler_Platz-2" data-name="Südtiroler Platz"
+                            transform="translate(8.024 -39.865) rotate(90)" fill="#707070" font-size="10"
+                            font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Südtiroler Platz</tspan>
+                        </text>
+                    </g>
+                    <g id="Keplerplatz" transform="translate(1005.963 1101.443) rotate(-90)">
+                        <g id="Ellipse_1-75" data-name="Ellipse 1" transform="translate(0.104 57.198)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-67" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 59.85)" fill="red" />
+                        <text id="Keplerplatz-2" data-name="Keplerplatz" transform="translate(8.024 -39.865) rotate(90)"
+                            fill="#707070" font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Keplerplatz</tspan>
+                        </text>
+                    </g>
+                    <g id="Reumanplatz" transform="translate(1005.963 1214.443) rotate(-90)">
+                        <g id="Ellipse_1-76" data-name="Ellipse 1" transform="translate(0.104 57.198)" fill="#fff"
+                            stroke="#000" stroke-width="1">
+                            <circle cx="11" cy="11" r="11" stroke="none" />
+                            <circle cx="11" cy="11" r="10.5" fill="none" />
+                        </g>
+                        <rect id="Rectangle_1-68" data-name="Rectangle 1" width="91" height="15" rx="7.5"
+                            transform="translate(22 59.85)" fill="red" />
+                        <text id="Reumanplatz-2" data-name="Reumanplatz" transform="translate(8.024 -39.865) rotate(90)"
+                            fill="#707070" font-size="10" font-family="LucidaConsole, Lucida Console">
+                            <tspan x="0" y="0">Reumanplatz</tspan>
+                        </text>
+                    </g>
+                </g>
+            </svg>
+
+
+        </div>
+    </div>
+
+    <script src="../dist/index.js"></script>
+</body>
+
+</html>
